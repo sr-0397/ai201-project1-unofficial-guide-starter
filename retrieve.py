@@ -1,0 +1,66 @@
+import chromadb
+from chromadb.utils import embedding_functions
+from config import CHROMA_COLLECTION, CHROMA_PATH, EMBEDDING_MODEL, N_RESULTS
+
+# Embedding function and ChromaDB client are initialized once at module load.
+# sentence-transformers downloads the model on first use — this may take
+# 30–60 seconds the very first time. Subsequent runs use a local cache.
+_ef = embedding_functions.SentenceTransformerEmbeddingFunction(
+    model_name=EMBEDDING_MODEL
+)
+_client = chromadb.PersistentClient(path=CHROMA_PATH)
+_collection = _client.get_or_create_collection(
+    name=CHROMA_COLLECTION,
+    embedding_function=_ef,
+    metadata={"hnsw:space": "cosine"},
+)
+
+
+def get_collection():
+    """Return the ChromaDB collection. Used by app.py during ingestion."""
+    return _collection
+
+
+def embed_and_store(chunks):
+
+    chunk_ids = [c["chunk_id"] for c in chunks]
+    _collection.delete(ids=chunk_ids)
+
+    _collection.add(
+        documents=[c["text"] for c in chunks],
+        metadatas=[{"game": c["game"]} for c in chunks],
+        ids=chunk_ids,
+    )
+    print(f"Stored {_collection.count()} total chunks in the vector database.")
+
+
+def retrieve(query, n_results=N_RESULTS):
+
+    if _collection.count() == 0:
+        return []
+
+
+    # Your implementation here.
+    results = _collection.query(
+        query_texts=[query],
+        n_results = n_results,
+        include = ["documents","metadatas", "distances"]
+    )
+
+    chunks =[]
+
+    documents = results["documents"][0]
+    metadatas = results["metadatas"][0]
+    distances = results["distances"][0]
+
+    for doc, metadata, distance in zip(documents, metadatas, distances):
+        chunks.append({
+            "text": doc,
+            "game": metadata["game"],
+            "distance": distance
+        })
+
+    for chunk in chunks:
+        print(f"[{chunk['game']}] (dist: {chunk['distance']:.3f}) {chunk['text'][:80]}...")
+
+    return chunks

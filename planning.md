@@ -10,7 +10,7 @@
 ## Domain
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
-
+UGA dorms and dining hall review
 ---
 
 ## Documents
@@ -20,16 +20,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | https://housing.uga.edu/explore-options/?nav=ps| Russel| |
+| 2 | https://housing.uga.edu/explore-options/?nav=ps| Creswell| |
+| 3 | https://housing.uga.edu/explore-options/?nav=ps| Myers Community| |
+| 4 | https://www.reddit.com/r/UGA/comments/1hd44d6/freshman_guide_to_dorms/| Freshman Housing Experience at UGA| |
+| 5 | https://www.reddit.com/r/UGA/comments/1hd44d6/freshman_guide_to_dorms/|Choosing the Best UGA Dorm | |
+| 6 | https://housing.uga.edu/explore-options/?nav=ps| | |
+| 7 | https://dining.uga.edu/locations/| Bolton| |
+| 8 | https://dining.uga.edu/locations/| Oglethorpe House Dining| |
+| 9 | https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.reddit.com/r/UGA/comments/1eqk8yp/which_dining_halls_have_the_healthiest_options/&ved=2ahUKEwiN6vvltviUAxVMLtAFHZqjKXkQFnoECBsQAQ&usg=AOvVaw3OCSxSa64XoM7ioleVyXlg| UGA Dining Commons System| |
+| 10 | https://dining.uga.edu/locations/| | |
 
 ---
 
@@ -40,11 +40,11 @@
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:** more than for the lab like 300-500?
 
-**Overlap:**
+**Overlap:** maybe 100
 
-**Reasoning:**
+**Reasoning:**I think this is reddit posts with lots of content that require to understand the context bc it is a information based document.
 
 ---
 
@@ -105,18 +105,11 @@
 
 ## AI Tool Plan
 
-<!-- For each part of the pipeline below, describe:
-     - Which AI tool you plan to use (Claude, Copilot, ChatGPT, etc.)
-     - What you'll give it as input (which sections of this planning.md, which requirements)
-     - What you expect it to produce
-     - How you'll verify the output matches your spec
-
-     "I'll use AI to help me code" is not a plan.
-     "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
-     with my specified chunk size and overlap" is a plan. -->
-
 **Milestone 3 — Ingestion and chunking:**
+Using claude to get the chunking code and test it.
 
 **Milestone 4 — Embedding and retrieval:**
+Will use claude for the embeding part to ask how to get the vector embedding and using chromadb as default.
 
 **Milestone 5 — Generation and interface:**
+Cluade and the lab to see how to do the generation part.
