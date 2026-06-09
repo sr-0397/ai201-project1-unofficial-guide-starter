@@ -368,3 +368,6 @@ RETRIEVED:
 - Ugadininghalls (dist=0.4781) sfaction, UGA continuously updates menus and dining offerings to meet student preferences. The dining system is widely regarded as one of the strengths of student life at the university.
 - Ohouse (dist=0.5029) Oglethorpe House Dining Commons, commonly called "O-House" by students, is a popular dining hall located on the east side of the University of Georgia campus. Many students consider O-House one of the
 - Bolton (dist=0.5047) Bolton Dining Commons is one of the most popular dining locations at the University of Georgia and is the largest dining commons on campus. Located near the freshman high-rise residence halls, Bolton 
+
+
+Link to video demo: https://www.loom.com/share/cdd18d4800ad418ca4bc756b4554b3ee
