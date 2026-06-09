@@ -56,29 +56,21 @@ UGA dorms and dining hall review
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
-
+**Model used:**
+sentence-transformers/all-MiniLM-L6-v2; This is a lightweight transformer-based sentence embedding model that generates dense vector representations of text optimized for semantic similarity search.
 **Top-k:**
-
-**Production tradeoff reflection:**
+2
+*Production tradeoff reflection:**
+Larger models (e.g., OpenAI text-embedding-3-large or higher-end transformer encoders) generally produce better semantic representations, especially for nuanced or ambiguous queries, but introduce higher inference latency and cost.
 
 ---
 
-## Evaluation Plan
-
-<!-- List your 5 test questions with their expected correct answers.
-     Questions should be specific enough that you can judge whether the system's response
-     is right or wrong. "What are good dining halls?" is too vague.
-     "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
-
-| # | Question | Expected answer |
-|---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
-
+#	Question	Expected answer
+1	Which UGA dorm is best for students who want a social freshman experience?	Russell Hall, Brumby Hall, and Creswell Hall are the best options for a social freshman experience because they are large freshman residence halls with strong community interaction and active social environments.
+2	What food options does Bolton Dining Commons offer?	Bolton Dining Commons offers stations such as The Wok, Tanyard Grill, Taqueria, and Buon Appetito, along with a variety of buffet-style and allergen-friendly options.
+3	Which dining halls are available at UGA and how do students use meal plans?	UGA dining halls include Bolton Dining Commons, Oglethorpe House Dining Commons, Snelling Dining Commons, and Village Summit. Students use meal plans, Paw Points, and other campus payment methods to access these dining locations.
+4	What makes O-House popular among students?	O-House is popular due to its food quality, convenient layout, and comfortable atmosphere, as well as its accessibility for students on East Campus.
+5	Which UGA dining hall is best for vegetarians?	UGA dining halls offer vegetarian-friendly options across multiple locations, including salads, international cuisine, and plant-based dishes; no single dining hall is definitively “best,” but all major dining commons (Bolton, O-House, Snelling) provide vegetarian options.
 ---
 
 ## Anticipated Challenges
